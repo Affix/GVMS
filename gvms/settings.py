@@ -25,7 +25,7 @@ except:
 	fo.write("DATABASES = {")
 	fo.write("\n\t'default': {")
 	fo.write("\n\t\t'ENGINE': 'django.db.backends.sqlite3',")
-	fo.write("\n\t\t'NAME': 'mydatabase.db',")
+	fo.write("\n\t\t'NAME': 'gvms.db',")
 	fo.write("\n\t}")
 	fo.write("\n}")
 	fo.write("\n\nSECRET_KEY = '%s'" % str(m.hexdigest()))
