@@ -1,6 +1,19 @@
 from django.db import models
 import hashlib
 
+class Rank(models.Model):
+	rankid = models.IntegerField()
+	rank_title = models.CharField(max_length=50)
+
+class Permission(models.Model):
+	permissionid = models.IntegerField()
+	permission_name = models.CharField(max_length=30)
+	
+class Group(models.Model):
+	groupid = models.IntegerField()
+	group_name = models.CharField(max_length=30)
+	permissionid = models.ManyToManyField(Permission)
+
 class Profile(models.Model):
 	@classmethod
 	def mkpasswd(self, password, salt):
@@ -19,16 +32,3 @@ class Profile(models.Model):
 	salt       = models.CharField(max_length=30)
 	groupid    = models.ManyToManyField(Group)
 	rank       = models.ManyToManyField(Rank)
-
-class Rank(models.Model):
-	rankid = models.IntegerField()
-	rank_title = models.CharField()
-
-class Permission(models.Model):
-	permissionid = models.IntegerField()
-	permission_name = models.CharField()
-	
-class Group(models.Model):
-	groupid = models.IntegerField()
-	group_name = models.CharField(max_length=30)
-	permissionid = models.ManyToManyField(Permission)
