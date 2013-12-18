@@ -7,8 +7,5 @@ env:
   - DJANGO=1.6
 install:
   - pip install Django==1.6 --use-mirrors
-before_script:
-  - "pep8 --exclude=migrations --ignore=E501,E225 src"
-  - pyflakes -x W src
 script:
   - python manage.py test
