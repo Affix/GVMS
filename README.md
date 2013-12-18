@@ -5,6 +5,7 @@ Global Virtual Management System
 * Website      : http://www.affix.me
 * License      : GNU/GPLv3+
 * Copyright    : 2013 Keiran Smith and 5 Switch Solutions LTD.
+* Status       : [![Build Status](https://travis-ci.org/Affix/GVMS.png?branch=master)](https://travis-ci.org/Affix/GVMS)
 
 About this Project
 ------------------
