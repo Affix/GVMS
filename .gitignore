@@ -35,6 +35,6 @@ nosetests.xml
 .pydevproject
 
 *.db
-dbsettings.py
+db_settings.py
 *.anjuta
 *~
