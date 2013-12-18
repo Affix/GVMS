@@ -1,10 +1,10 @@
 Global Virtual Management System
 --------------------------------
 
-Developed By : Keiran Smith
-Website      : http://www.affix.me
-License      : GNU/GPLv3+
-Copyright    : 2013 Keiran Smith and 5 Switch Solutions LTD.
+* Developed By : Keiran Smith
+* Website      : http://www.affix.me
+* License      : GNU/GPLv3+
+* Copyright    : 2013 Keiran Smith and 5 Switch Solutions LTD.
 
 About this Project
 ------------------
