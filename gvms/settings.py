@@ -17,7 +17,7 @@ try:
 except:
 	import sys
 	print "Database Settings are missing! Generating new Settings"
-	fo = open(os.path.dirname("db_settings.py", "a+"))
+	fo = open(os.path.dirname("db_settings.py"), "a+")
 	fo.write("-DATABASES = {")
 	fo.write("\n\t'default': {")
 	fo.write("\n\t\t'ENGINE': 'django.db.backends.sqlite3',")
