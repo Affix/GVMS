@@ -1,2 +1,3 @@
-= Global Virtual Management System =
+Global Virtual Management System
+--------------------------------
 
