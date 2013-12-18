@@ -16,16 +16,24 @@ try:
 	from db_settings import *
 except:
 	import sys
+	import hashlib, datetime
 	print "Database Settings are missing! Generating new Settings"
-	fo = open(os.path.dirname("db_settings.py"), "a+")
-	fo.write("-DATABASES = {")
+	print os.path.join("db_settings.py")
+	m = hashlib.sha256()
+	m.update(str(datetime.datetime.now().time()))
+	fo = open(os.path.join("db_settings.py"), "w")
+	fo.write("DATABASES = {")
 	fo.write("\n\t'default': {")
 	fo.write("\n\t\t'ENGINE': 'django.db.backends.sqlite3',")
 	fo.write("\n\t\t'NAME': 'mydatabase.db',")
 	fo.write("\n\t}")
-	fo.write("}")
-	fo.write("SECRET_KEY = ''")
+	fo.write("\n}")
+	fo.write("\n\nSECRET_KEY = '%s'" % str(m.hexdigest()))
+	fo.close()
 
+
+from db_settings import *
+	
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
