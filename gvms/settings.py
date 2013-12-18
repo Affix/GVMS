@@ -16,8 +16,15 @@ try:
 	from db_settings import *
 except:
 	import sys
-	print "Database Settings are missing!"
-	sys.exit(1)
+	print "Database Settings are missing! Generating new Settings"
+	fo = open(os.path.dirname("db_settings.py", "a+"))
+	fo.write("-DATABASES = {")
+	fo.write("\n\t'default': {")
+	fo.write("\n\t\t'ENGINE': 'django.db.backends.sqlite3',")
+	fo.write("\n\t\t'NAME': 'mydatabase.db',")
+	fo.write("\n\t}")
+	fo.write("}")
+	fo.write("SECRET_KEY = ''")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/

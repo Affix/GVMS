@@ -2,15 +2,12 @@ from django.db import models
 import hashlib
 
 class Rank(models.Model):
-	rankid = models.IntegerField()
 	rank_title = models.CharField(max_length=50)
 
 class Permission(models.Model):
-	permissionid = models.IntegerField()
 	permission_name = models.CharField(max_length=30)
 	
 class Group(models.Model):
-	groupid = models.IntegerField()
 	group_name = models.CharField(max_length=30)
 	permissionid = models.ManyToManyField(Permission)
 
@@ -21,7 +18,6 @@ class Profile(models.Model):
 		m.update(password + salt)
 		return str(m.hexdigest())
 
-	userid     = models.IntegerField()
 	first_name = models.CharField(max_length=30)
 	last_name  = models.CharField(max_length=30)
 	email      = models.EmailField(max_length=245)
